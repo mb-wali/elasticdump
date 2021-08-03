@@ -1,0 +1,1 @@
+{"subjects-subject-v1.0.0-1623051756":{"mappings":{"properties":{"identifier":{"type":"keyword"},"scheme":{"type":"keyword"},"term":{"type":"keyword"},"title":{"type":"text"}}}}}

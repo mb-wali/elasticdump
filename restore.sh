@@ -1,14 +1,46 @@
 # This file is part of elasticsearch restore.
 #!/bin/sh
 
-# URL where elasticsearch is running.
-OUTPUT=http://localhost:9200
+# We would run rstore commands for each index manullay until the script is ready.
 
-# destination where dump files are located
-DUMPS=./dumps
+# communities-communities-v1.0.0
+elasticdump \
+    --input=./dumps/communities-communities-v1.0.0-1623051756.json \
+    --output=http://localhost:9200/communities-communities-v1.0.0-1623051756 \
+    --type=mapping
 
-for FILENAME in "$DUMPS"/*
-do
-    echo "$FILENAME"
-    elasticdump --input=$FILENAME --output=$OUTPUT/$FILE --type=data
-done
+# rdmrecords-drafts-draft-v2.0.0
+elasticdump \
+    --input=./dumps/rdmrecords-drafts-draft-v2.0.0-1623051756.json \
+    --output=http://localhost:9200/rdmrecords-drafts-draft-v2.0.0-1623051756 \
+    --type=mapping
+
+# rdmrecords-drafts-draft-v3.0.0
+elasticdump \
+    --input=./dumps/rdmrecords-drafts-draft-v3.0.0-1623051756.json \
+    --output=http://localhost:9200/rdmrecords-drafts-draft-v3.0.0-1623051756 \
+    --type=mapping
+
+# rdmrecords-records-record-v2.0.0
+elasticdump \
+    --input=./dumps/rdmrecords-records-record-v2.0.0-1623051756.json \
+    --output=http://localhost:9200/rdmrecords-records-record-v2.0.0-1623051756 \
+    --type=mapping
+
+# rdmrecords-records-record-v3.0.0
+elasticdump \
+    --input=./dumps/rdmrecords-records-record-v3.0.0-1623051756.json \
+    --output=http://localhost:9200/rdmrecords-records-record-v3.0.0-1623051756 \
+    --type=mapping
+
+# ./dumps/subjects-subject-v1.0.0
+elasticdump \
+    --input=./dumps/subjects-subject-v1.0.0-1623051756.json \
+    --output=http://localhost:9200/subjects-subject-v1.0.0-1623051756 \
+    --type=mapping
+
+# ./dumps/vocabularies-vocabulary-v1.0.0
+elasticdump \
+    --input=./dumps/vocabularies-vocabulary-v1.0.0-1623051756.json \
+    --output=http://localhost:9200/vocabularies-vocabulary-v1.0.0-1623051756 \
+    --type=mapping
